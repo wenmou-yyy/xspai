@@ -16,7 +16,8 @@ public class Article {
     private String article;
     private String createTime;
     private Integer loves;
-    private String userId;
+    private Integer userId;
     private String columnName;
     private String isDelete;
+    private User user;
 }

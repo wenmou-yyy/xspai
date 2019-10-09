@@ -2,5 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.a.mapper.IUserMapper">
+    <resultMap id="findById" type="com.a.entity.User">
+        <id property="id" column="id"></id>
+        <result property="uUsername" column="u_username"></result>
+        <result property="uPassword" column="u_password"></result>
+        <result property="uSex" column="u_sex"></result>
+        <result property="uEmail" column="u_email"></result>
+        <result property="uPhone" column="u_phone"></result>
+        <result property="isDelete" column="is_delete"></result>
+        <result property="uHead" column="u_head"></result>
+    </resultMap>
 
+    <select id="FindById" resultMap="findById">
+        select * from user where id=#{uid} and is_delete=1;
+    </select>
 </mapper>

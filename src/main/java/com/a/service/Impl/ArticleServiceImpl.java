@@ -25,7 +25,6 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public Article findSingleById(Integer id) {
         Article article = articleMapper.findSingleById(id);
-        System.out.println(article);
         return article;
     }
 
@@ -35,5 +34,16 @@ public class ArticleServiceImpl implements ArticleService {
         return num;
     }
 
+    @Override
+    public Integer like(Integer like, Integer id) {
+        Integer num = articleMapper.like(like, id);
+        return num;
+    }
+
+    @Override
+    public Article findLike(Integer id) {
+        Article article = articleMapper.findLike(id);
+        return article;
+    }
 
 }

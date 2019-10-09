@@ -52,4 +52,17 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 默认编码 -->
+        <!--<property name="defaultEncoding" value="${defaultEncoding}" />-->
+        <!-- 文件大小最大值 -->
+
+        <property name="maxUploadSize" value="10485760" />
+        <!--    单个文件限制大小 -->
+        <!--<property name="maxUploadSizePerFile" value="${maxUploadSizePerFile}"/>-->
+        <!-- 内存中缓存的最大值 -->
+        <!-- <property name="maxInMemorySize" value="${maxInMemorySize}" />
+         <property name="resolveLazily" value="${resolveLazily}"/>-->
+    </bean>
 </beans>
